@@ -2,15 +2,15 @@
 <html>
 <style type="text/css">
 
-
-body {
-	background-image: url(./background.jpg);
+/* //禁用壁纸功能 */
+/* body {
+	background-image: url(./images/Background.jpg);
 	  background-repeat: no-repeat;
 	background-attachment: fixed; 
 	background-position: center center;
 	 background-attachment: fixed;
 	  background-size: cover;
-}
+} */
 body,td,th {
 	font-family: material-icons;
 	font-size: 18px;
@@ -62,14 +62,20 @@ body,td,th {
     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 </style>
+
 <head>
 <meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1”>
 <Link Rel="SHORTCUT ICON" href="./favicon.ico">
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <title>KFACBT 的个人主页</title>
-	<!--MDUI引用-->
-	 <!--CSS引用-->
+	<!-- MDUI引用 -->
+	 <!-- CSS引用 -->
+  
+  <!-- //更改颜色菜单的CSS -->
+  <link rel="stylesheet" href="./css/mdui_color.css">
+  <!-- \\End -->
+
 	<link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
@@ -78,37 +84,43 @@ body,td,th {
 />
 	<link
   rel="stylesheet"
-  href="css/materiality.min.css"
+  href="./css/materiality.min.css"
 />
+<!-- //原来就是这样的，别动 -->
 	<!--
 		<link
   rel="stylesheet"
   href="css/mdui.min.css"
 />-->
-	<!--JS引用-->
+	<!-- JS引用 -->
 	<script
-  src="js/mdui.min.js"
+  src="./js/mdui.min.js"
 ></script>
 		<script
-  src="js/darkmode.min.js"
+  src="./js/darkmode.min.js"
 ></script>
 		<script
-  src="js/materiality.min.js"
+  src="./js/materiality.min.js"
 ></script>
 			<script
-  src="js/smoothscroll.min.js"
+  src="./js/smoothscroll.min.js"
 ></script>
 
 </head>
+
 	<!--导航栏-->
-<body class="mdui-drawer-body-left  mdui-appbar-with-toolbar mdui-theme-primary-pink mdui-theme-accent-pink">
+<body class="mdui-drawer-body-left  mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto" id="p-d">
 	<!--顶栏开始-->
 <header class="mdui-appbar mdui-appbar-fixed mdui-color-pink-accent">
 <div class="mdui-toolbar mdui-color-theme">
 <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
 <a href="https://space.bilibili.com/514279030"target="_blank" class="mdui-typo-headline">KFACBT</a>
+<a href="./index.html" class="mdui-typo-title">首页</a>
 <div class="mdui-toolbar-spacer"></div>
-<em class="mdui-icon material-icons" id="dark_toggle_icon"></em></div>
+<span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}">
+  <i class="mdui-icon material-icons">color_lens</i>
+</span>
+<!-- <em class="mdui-icon material-icons" id="dark_toggle_icon"></em></div> -->
 </header>
 	<!--顶栏结束-->
 <div class="mdui-drawer" id="drawer">
@@ -121,7 +133,7 @@ body,td,th {
     <div class="container">
       <div class="splash">
         <div class="content">
-		   <a href="https://space.bilibili.com/514279030"target="_blank" class="logo mdui-m-y-2 mdui-m-l-2" tppabs="" alt="PatternFly logo" id="qq"  style="background:url('./LOGO.PNG');background-size:contain"></a>
+		   <a href="https://space.bilibili.com/514279030"target="_blank" class="logo mdui-m-y-2 mdui-m-l-2" tppabs="" alt="PatternFly logo" id="qq"  style="background:url('./images/Logo.png');background-size:contain"></a>
 		   
         </div>
 	   </div>
@@ -131,13 +143,24 @@ body,td,th {
 <div class="description mdui-m-x-2 mdui-text-color-white-text mdui-valign">KFACBT</div>
 </div>
 	<!--按钮区域-->
-<a href="../index.html" class="mdui-list-item mdui-ripple" id="home-url">
-<i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-<div class="mdui-list-item-content mdui-m-r-4">首页</div>
-</a>
+  <a href="https://gytxtx.github.io" class="mdui-list-item mdui-ripple" id="root-url">
+    <i class="mdui-list-item-icon mdui-icon material-icons">cloud</i>
+    <div class="mdui-list-item-content mdui-m-r-4">根</div>
+    </a>
+    
+  <a href="./index.html" class="mdui-list-item mdui-ripple" id="home-url">
+  <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+  <div class="mdui-list-item-content mdui-m-r-4">首页</div>
+  </a>
+
+  <a href="../Blog/" class="mdui-list-item mdui-ripple" id="blog-url">
+    <i class="mdui-list-item-icon mdui-icon material-icons">insert_drive_file</i>
+    <div class="mdui-list-item-content mdui-m-r-4">博客</div>
+    </a>
 
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<!-- //禁用滚动条 -->
+<!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
 </div>
 <div class="page-content">
 <div class="translate-box"></div>
@@ -149,16 +172,9 @@ body,td,th {
 <!--文章预览卡片-->
 <div class="mdui-card mdui-hoverable mdui-m-y-3">
 <div class="mdui-card-primary">
-<div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent" >首页</a></div>
-<div class="mdui-card-primary-subtitle mdui-text-color-theme-text">
-2020-7-12 </div>
-<font size="5"color="#FF0000">警告：这个页面下载的文件将会威胁你的计算机安全，这些病毒只作为学习研究和娱乐观赏所用，严禁用于恶意破坏，运行这些病毒造成的一切后果由运行者承担！严禁未经作者本人同意擅自传播这些病毒样本，造成后果也同样由传播者承担！</font>
-<br/>
-<font size="6"color="#FF0000">网页作者和病毒作者（都是我）将不会承担任何责任！！！包括法律责任！！！</font>
-<br/>
-<font size="5"color="#FF0000">如果你进行下载，则你已阅读和同意警告的内容！如果你不同意，请关闭本网页！</font>
-<br/>
-<font size="6"color="#FF0000">下面是病毒文件!!!（已经弄成压缩包，解压密码均为GTX690）</font>
+<div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent">首页</a></div>
+<div class="mdui-card-primary-subtitle mdui-text-color-theme-text">2023-5-23</div>
+
 
 <!-- 正文区结束 -->
 
@@ -167,25 +183,49 @@ body,td,th {
 
 <!--文章预览卡片结束-->
 	
-<html><body>
-</body></html>
+<!-- <html><body>
+</body></html> -->
 </div>
-<footer class="mdui-color-theme">
+<!-- //加了一个 footer-nav 以适应主题色 -->
+<footer class="footer-nav mdui-color-theme">
 <div class="footer-icons mdui-col-xs-3 mdui-valign">
 </div>
 <div class="footer-copyright mdui-col-xs-6 mdui-valign">
-<div class="mdui-center">GitHub: <a href="https://github.com/gytxtx"target="_blank">gytxtx</a></div>
+<div class="mdui-center">GitHub: <a href="https://github.com/gytxtx" target="_blank">gytxtx</a></div>
 </div>
 <div class="footer-credit mdui-col-xs-3 mdui-valign">
 <div class="mdui-center">
 
-<div>二次元ICP备 20120712号</div>
-<div>二次元公网安备 20120712号</div>
+<div>Powered by <a href="https://mdui.org/" target="_blank">MDUI</a></div>
+<!-- <div>GitHub Pages</div> -->
+<a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
 
 </div>
 </div>
 </footer>
 </div>
+
+<!-- <div class="footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+
+      <a href="./headroom" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 footer-nav-left">
+            <div class="footer-nav-text">
+              <i class="mdui-icon material-icons">arrow_back</i>
+              <span class="footer-nav-direction mdui-hidden-xs-down">Previous</span>
+              <div class="footer-nav-chapter mdui-hidden-xs-down">Headroom</div>
+            </div>
+          </a>
+
+      <div class="mdui-col-xs-2 mdui-col-sm-6 footer-nav-right"></div>
+    </div>
+  </div>
+</div> -->
+
 <a class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" id="scrolltop" href="#top"><i class="mdui-icon material-icons">keyboard_arrow_up</i></a>
+
+<!-- //更改颜色菜单的JS -->
+<script src="./js/mdui_color.js"></script>
+<!-- \\End -->
 </body>
 </html>
